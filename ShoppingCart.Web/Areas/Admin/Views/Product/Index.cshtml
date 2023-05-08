@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Product";
+}
+<div class="page-header">
+    <h1>Product</h1>
+</div>
+<div class="page-filter">
+    <a class="btn btn-primary" asp-action="CreateOrUpdate">Create New</a>
+    <div class="d-flex pt-md-2 col-6">
+        <input id="searchData" class="form-control me-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit" onclick="ProductJS.GetList()">Search</button>
+    </div>
+</div>
+<div id="page-data"></div>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function(){
+            ProductJS.GetList();
+        })
+    </script>
+    <script src="~/Script/Product.js"></script>
+}
+
+
+

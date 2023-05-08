@@ -1,0 +1,86 @@
+﻿@using ShoppingCart.DataAccess.Repositories
+@model ShoppingCart.DataAccess.Model.Product
+@inject IUnitOfWork _unitOfWork;
+@{
+    var ListCategory = _unitOfWork.CategoryRepository.GetListCategory();
+    var ListThumbnail = _unitOfWork.UploadFileRepository.GetThumbnailsFromUploadFile(Model.Id);
+    var host = ViewBag.Host;
+    List<SelectListItem> CategoryItems = new List<SelectListItem>();
+    CategoryItems.AddRange(ListCategory.Select(x => new SelectListItem()
+            {
+                Text = x.Name,
+                Value = x.Id.ToString(),
+                Selected = false
+            }));
+
+}
+<style>
+    #dvListMedia {
+        display: flex;
+    }
+</style>
+<div id="modalUploadProductImage" title="Upload"></div>
+<form id="CreateOrUpdate">
+    <input id="MediaIDs" name="MediaIDs" type="hidden" />
+    <input type="hidden" asp-for="Id"/>
+    <div class="border p-3 mt-4">
+            <div class="form-group">
+                <h2 class="text-primary">@((Model.Id == 0) ? "Create" : "Edit")</h2>
+            </div>
+        <div asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="col-form-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="col-form-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="col-form-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="col-form-label"></label>
+                @Html.DropDownListFor(x => x.CategoryId,
+                    CategoryItems,
+                    "",
+                    new
+                    {
+                        @class = "form-control",
+                        @required = true,
+                        
+                    })
+                @Html.ValidationMessageFor(model => model.CategoryId)
+            </div>
+            <a onclick="ProductJS.ShowUploadFile(); return false;" class="btn btn-primary btn-sm mt-2">Upload Image</a>
+            <div id="dvListMedia" class="form-group">
+                @if(Model.Id != 0)
+                {
+                    
+                    foreach(var item in ListThumbnail)
+                    {
+                        item.Thumbnail = host + item.Thumbnail;
+                        <div class="list-media-item m-2">
+                            <img src="@item.Thumbnail"/>
+                            <a onclick="ProductJS.DeleteMedia(@item.MediaID); return false;"><i class="fa-solid fa-xmark"></i></a>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="pt-2">
+                <a class="btn btn-primary" onclick="ProductJS.CreateOrUpdate()">Save</a>
+                <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+            </div>
+
+    </div>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/Script/Product.js"></script>
+}
