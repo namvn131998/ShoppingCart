@@ -1,9 +1,0 @@
-﻿@{
-    var Media = ViewBag.Media;
-    string host = ViewBag.Host;
-    Media.Thumbnail = host + Media.Thumbnail;
-}
-<div  class="list-media-item m-1">
-        <img src="@Media.Thumbnail"/>
-    
-</div>
