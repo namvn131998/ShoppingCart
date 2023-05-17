@@ -1,0 +1,15 @@
+﻿.list-media-item{
+    position: relative;
+}
+.list-media-item > img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+.list-media-item > a {
+    position: absolute;
+    right:-10px;
+    top: -10px;
+    cursor: pointer;
+}
+

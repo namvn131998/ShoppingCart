@@ -1,0 +1,29 @@
+﻿@using ShoppingCart.DataAccess.Model;
+@model List<SidebarItem>
+@{
+    var sidebarItem = Model.Where(x => x.IsActive).OrderBy(x => x.DisplayPriority);
+
+}
+<div class="sidebar-section width-20">
+<nav>
+    <ul>
+        <li>
+            <i id="sidebar" class="fa-solid fa-angle-left"></i>
+        </li>
+        <li>
+            <a class="logo">
+                <img  src="~/img/logo.jpg"/>
+            </a>
+        </li>
+        @foreach(var item in sidebarItem)
+        {
+            <li class="@(item.Name == "Category" ? "is-active" : "")">
+                <a asp-controller="@item.Controller" asp-action = "@item.Action">
+                <i class = "@item.Class"></i>
+                <span class="nav-item">@item.Name</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>
+</div>
