@@ -9,6 +9,7 @@
 @{
     CategoryVM categoryVM = new CategoryVM();
     categoryVM.categories = _unitOfWork.CategoryRepository.GetAll();
+    string host = ViewBag.Host;
 }
 
 <style>
@@ -34,14 +35,15 @@
         <tr>
             <td>@item.Name</td>
             <td>
-                <img src="@_unitOfWork.UploadFileRepository.GetThumbnailFromUploadFile(item.Id)">
+                
+                <img src="@_unitOfWork.UploadFileRepository.GetThumbnailFromUploadFile(item.Id,host)">
             </td>
             <td>@item.Description</td>
             <td>@item.Price</td>
             <td>@categoryVM.categories.Where(x => x.Id == item.CategoryId).Select(x => x.Name).FirstOrDefault()</td>
             <td>
                 <a asp-area="Admin" asp-controller="Product" asp-action="CreateOrUpdate" asp-route-id="@item.Id">Edit</a>
-                <a onclick = "SiteJS.Delete(@item.Id)">Delete</a>
+                <a onclick = "ProductJS.Delete(@item.Id)">Delete</a>
                 
             </td>
         </tr>

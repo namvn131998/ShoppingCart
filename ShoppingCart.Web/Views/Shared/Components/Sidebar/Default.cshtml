@@ -17,8 +17,8 @@
         </li>
         @foreach(var item in sidebarItem)
         {
-            <li class="@(item.Name == "Category" ? "is-active" : "")">
-                <a asp-controller="@item.Controller" asp-action = "@item.Action">
+            <li>
+                <a asp-controller="@item.Controller" asp-action = "@item.Action" class="btn-nav-item">
                 <i class = "@item.Class"></i>
                 <span class="nav-item">@item.Name</span>
                 </a>

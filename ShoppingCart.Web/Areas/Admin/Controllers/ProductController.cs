@@ -26,9 +26,7 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult CreateOrUpdate(int? id)
         {
-            var host = HttpContext.Request.Host.ToString();
-            host = Commons.GetPathImage(host);
-            ViewBag.Host = host;
+            ViewBag.Host = GetHostName();
             Product product = new Product();
             if (id == null || id == 0)
             {
@@ -50,8 +48,12 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CreateOrUpdate(Product product, string MediaIDs = "")
         {
-            MediaIDs = MediaIDs.Trim(',');
-            var ids = MediaIDs.Split(',').ToList();
+            List<string> ids = new List<string>();
+            if (!string.IsNullOrEmpty(MediaIDs))
+            {
+                MediaIDs = MediaIDs.Trim(',');
+                ids = MediaIDs.Split(',').ToList();
+            }
             if (ModelState.IsValid)
             {
                 if (product.Id == 0)
@@ -85,6 +87,7 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult _List(ProductListRequestModel product)
         {
+            ViewBag.Host = GetHostName();
             ProductVM productVM = new ProductVM();
             if (string.IsNullOrEmpty(product.searchValue))
                 productVM.Products = _unitOfWork.ProductRepository.GetAll();
@@ -176,6 +179,12 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
             _unitOfWork.Save();
             int id = uploadfile.MediaID;
             return id;
+        }
+        public string GetHostName()
+        {
+            var host = HttpContext.Request.Host.ToString();
+            host = Commons.GetPathImage(host);
+            return host;
         }
     }
 }

@@ -25,10 +25,10 @@ namespace ShoppingCart.DataAccess.Repositories
             }
             _context.SaveChanges();
         }
-        public string GetThumbnailFromUploadFile(int productID)
+        public string GetThumbnailFromUploadFile(int productID, string host)
         {
             var uploadfile = _context.UploadFiles.FirstOrDefault(u => u.ProductID == productID) ?? new UploadFile();
-            return uploadfile.Thumbnail;
+            return host + uploadfile.Thumbnail;
         }
         public List<UploadFile> GetThumbnailsFromUploadFile(int productID)
         {
