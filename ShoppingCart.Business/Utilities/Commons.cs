@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ShoppingCart.Business.Ultility
+namespace ShoppingCart.Business.Utilities
 {
     public static class Commons
     {

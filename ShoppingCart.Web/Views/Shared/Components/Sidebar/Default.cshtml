@@ -1,8 +1,9 @@
-﻿@using ShoppingCart.DataAccess.Model;
+﻿@using ShoppingCart.Business.Utilities
+@using ShoppingCart.DataAccess.Model;
 @model List<SidebarItem>
 @{
     var sidebarItem = Model.Where(x => x.IsActive).OrderBy(x => x.DisplayPriority);
-
+    var userLogged = SessionUtilities.CurrentUser(ViewContext.HttpContext.Session);
 }
 <div class="sidebar-section width-20">
 <nav>
@@ -12,7 +13,7 @@
         </li>
         <li>
             <a class="logo">
-                <img  src="~/img/logo.jpg"/>
+                <img  src="~/img/user.jpg"/>
             </a>
         </li>
         @foreach(var item in sidebarItem)

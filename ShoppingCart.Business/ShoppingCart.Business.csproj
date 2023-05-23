@@ -9,4 +9,7 @@
 	    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
 	    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.5" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\ShoppingCart.DataAccess\ShoppingCart.DataAccess.csproj" />
+    </ItemGroup>
 </Project>

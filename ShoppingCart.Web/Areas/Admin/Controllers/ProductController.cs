@@ -4,7 +4,8 @@ using ShoppingCart.DataAccess.ViewModels;
 using ShoppingCart.DataAccess.Model;
 using ShoppingCart.Models.Category;
 using ShoppingCart.DataAccess.Constants.Enums;
-using ShoppingCart.Business.Ultility;
+using ShoppingCart.Business.Utilities;
+using ShoppingCart.DataAccess.Helper;
 using X.PagedList;
 
 
@@ -21,6 +22,7 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
+            var user = HttpContext.Session.Get<LoggedUser>(SessionUtilities.SessionCurrentUserkey);
             return View();
         }
         [HttpGet]

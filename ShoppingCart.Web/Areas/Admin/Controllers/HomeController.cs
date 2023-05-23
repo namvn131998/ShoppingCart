@@ -3,6 +3,9 @@ using ShoppingCart.DataAccess.ViewModels;
 using ShoppingCart.DataAccess.Repositories;
 using ShoppingCart.DataAccess.Model;
 using ShoppingCart.DataAccess.Constants.Enums;
+using ShoppingCart.Business.Utilities;
+using ShoppingCart.DataAccess.Helper;
+
 namespace ShoppingCart.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
@@ -58,6 +61,8 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
             }
             if(loginStatus == LoginStatus.Success)
             {
+                var user = new LoggedUser(registration);
+                HttpContext.Session.Set(SessionUtilities.SessionCurrentUserkey, user);
                 return RedirectToAction("Index", "Category");
             }
             else

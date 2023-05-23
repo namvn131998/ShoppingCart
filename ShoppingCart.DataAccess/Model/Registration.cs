@@ -17,8 +17,9 @@ namespace ShoppingCart.DataAccess.Model
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string? Phone { get; set; }
         public DateTime CreatedDate { get; set; }
         public int Status { get; set; }
-
+        public string? Photo { get; set; }   
     }
 }
