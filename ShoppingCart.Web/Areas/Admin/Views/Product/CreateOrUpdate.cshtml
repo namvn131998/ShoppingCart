@@ -1,9 +1,11 @@
 ﻿@using ShoppingCart.DataAccess.Repositories
 @model ShoppingCart.DataAccess.Model.Product
+@using ShoppingCart.Business.Utilities
 @inject IUnitOfWork _unitOfWork;
 @{
     var ListCategory = _unitOfWork.CategoryRepository.GetListCategory();
     var ListThumbnail = _unitOfWork.UploadFileRepository.GetThumbnailsFromUploadFile(Model.Id);
+    var userLogged = SessionUtilities.CurrentUser(ViewContext.HttpContext.Session);
     var host = ViewBag.Host;
     List<SelectListItem> CategoryItems = new List<SelectListItem>();
     CategoryItems.AddRange(ListCategory.Select(x => new SelectListItem()

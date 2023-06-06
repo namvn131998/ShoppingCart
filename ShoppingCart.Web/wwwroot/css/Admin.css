@@ -1,4 +1,5 @@
-﻿.list-media-item{
+﻿img
+.list-media-item{
     position: relative;
 }
 .list-media-item > img {
@@ -12,4 +13,115 @@
     top: -10px;
     cursor: pointer;
 }
+/* Sidebar */
+.is-active {
+    background-color: var(--bs-gray-300);
+    border-left: 3px solid var(--bs-primary);
+}
+
+.sidebar-section {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    background: var(--bs-white);
+    border-radius: 0.5rem;
+    box-shadow: 0 2rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+#sidebar {
+    margin: 1rem 0 0 1rem;
+}
+
+.sidebar-section .logo {
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 1rem 0 0 1rem;
+}
+
+    .sidebar-section .logo img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 25%;
+    }
+
+    .sidebar-section .logo span {
+        font-weight: bold;
+        font-size: 1.8rem;
+        padding-left: 1rem;
+    }
+
+.sidebar-section a {
+    position: relative;
+    font-size: 1.4rem;
+    color: var(--bs-dark);
+    display: table;
+    padding: 1rem;
+    text-decoration: none;
+    width: 30rem;
+}
+
+    .sidebar-section a:hover {
+        color: var(--bs-primary);
+    }
+
+.sidebar-section li {
+    list-style: none;
+}
+
+    .sidebar-section li:first-of-type {
+        border-bottom: 2px solid var(--bs-primary);
+    }
+
+.sidebar-section i {
+    position: relative;
+    width: 7rem;
+    height: 4rem;
+    text-align: center;
+    font-size: 1.8rem;
+    padding-top: 1rem;
+}
+
+.sidebar-section ul {
+    padding-left: 0;
+}
+
+.nav-item {
+    position: relative;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.page-wrap {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    background: rgb(226, 226, 226);
+}
+
+    .page-wrap .page-content {
+        flex-grow: 1;
+        padding: 10px;
+        margin: 0.5rem 0 0 21rem;
+        background: var(--bs-white);
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+.width-20 {
+    width: 20rem;
+}
+
+.width-9 {
+    width: 9rem;
+}
+
+.mgl-10 {
+    margin-left: 10rem !important;
+}
+/* --------------*/
 

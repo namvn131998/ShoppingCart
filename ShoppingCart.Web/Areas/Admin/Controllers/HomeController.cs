@@ -70,5 +70,29 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
                 return View();
             }
         }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Set(SessionUtilities.SessionCurrentUserkey, "");
+            return RedirectToAction("AdminLogin", "Home");
+        }
+        [HttpGet]
+        public IActionResult Register()
+        {
+            var model = new Registration();
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult Register(Registration reg)
+        {
+            if (ModelState.IsValid)
+            {
+                if (reg.UserID == 0)
+                {
+                    _unitOfWork.RegistrationRepository.Add(reg);
+                }
+                _unitOfWork.Save();
+            }
+            return Json(new {message="OK"});
+        }
     }
 }

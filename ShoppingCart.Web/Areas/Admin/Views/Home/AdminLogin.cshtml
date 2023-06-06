@@ -14,7 +14,7 @@
 
   <!-- Password input -->
   <div class="form-outline mb-4 ">
-    <input asp-for="Password" class="form-control" type="pas" placeholder = "Password"  />
+    <input asp-for="Password" class="form-control" type="password" placeholder = "Password"  />
     <span asp-validation-for="Password"></span>
   </div>
 
@@ -30,7 +30,7 @@
 
     <div class="col">
       <!-- Simple link -->
-      <a href="#!">Forgot password?</a>
+      <a asp-controller="Home" asp-action="Register">Register</a>
     </div>
   </div>
   <!-- Submit button -->

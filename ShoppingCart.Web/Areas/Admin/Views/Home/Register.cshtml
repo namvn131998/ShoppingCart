@@ -1,0 +1,47 @@
+﻿@using ShoppingCart.DataAccess.Model
+@model Registration
+@{
+    Layout = "_LoginLayout";
+}
+<form class="m-auto w-50"  asp-action="Register">
+    <div asp-validation-summary="ModelOnly"></div>
+  <!-- Username input -->
+  <div class="form-outline mb-4 ">
+    <label asp-for="UserName">UserName</label>
+    <input asp-for="UserName" class="form-control" type="text" placeholder = "Username" />
+    <span asp-validation-for="UserName"></span>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4 ">
+    <label asp-for="Password">Password</label>
+    <input asp-for="Password" class="form-control" type="password" placeholder = "Password"  />
+    <span asp-validation-for="Password"></span>
+  </div>
+  <!-- Email input -->
+  <div class="form-outline mb-4 ">
+    <label asp-for="Email">Email</label>
+    <input asp-for="Email" class="form-control" type="email" placeholder = "Email"  />
+    <span asp-validation-for="Email"></span>
+  </div>
+    <!-- First Name input -->
+  <div class="form-outline mb-4 ">
+    <label asp-for="FirstName">FirstName</label>
+    <input asp-for="FirstName" class="form-control" type="text" placeholder = "FirstName"  />
+    <span asp-validation-for="FirstName"></span>
+  </div>
+    <!-- Last Name input -->
+  <div class="form-outline mb-4 ">
+    <label asp-for="LastName">LastName</label>
+    <input asp-for="LastName" class="form-control" type="text" placeholder = "LastName"  />
+    <span asp-validation-for="LastName"></span>
+  </div>
+    <!-- Phone input -->
+  <div class="form-outline mb-4 ">
+    <label asp-for="Phone">Phone</label>
+    <input asp-for="Phone" class="form-control" type="number" placeholder = "Phone"  />
+    <span asp-validation-for="Phone"></span>
+  </div>
+    <!-- Submit button -->
+  <button type="submit" id="btn-Register"  class="btn btn-primary btn-block mb-4">Register</button>
+</form>

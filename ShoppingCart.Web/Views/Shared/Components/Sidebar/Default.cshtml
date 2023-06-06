@@ -13,7 +13,7 @@
         </li>
         <li>
             <a class="logo">
-                <img  src="~/img/user.jpg"/>
+                <img  src="@userLogged.Photo"/>
             </a>
         </li>
         @foreach(var item in sidebarItem)
@@ -25,6 +25,12 @@
                 </a>
             </li>
         }
+        <li>
+            <a asp-controller="Home" asp-action="Logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span class="nav-item">Logout</span>
+            </a>
+        </li>
     </ul>
 </nav>
 </div>
