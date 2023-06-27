@@ -12,9 +12,19 @@
             <i id="sidebar" class="fa-solid fa-angle-left"></i>
         </li>
         <li>
-            <a class="logo">
-                <img  src="@userLogged.Photo"/>
-            </a>
+            @if (userLogged == null)
+            {
+                <a class="logo">
+
+                    <img  src="/img/user.jpg"/>
+                </a>
+            }else
+            {
+                <a class="logo" href="@Url.Action("Profile","Home", new{UserID = userLogged.UserId})">
+
+                    <img  src="@userLogged.Photo"/>
+                </a>
+            }
         </li>
         @foreach(var item in sidebarItem)
         {

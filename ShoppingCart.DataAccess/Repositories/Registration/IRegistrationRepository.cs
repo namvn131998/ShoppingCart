@@ -14,5 +14,6 @@ namespace ShoppingCart.DataAccess.Repositories
         void Update(Registration registration);
         LoginStatus Login(string username, string password, out Registration registration);
         Registration GetUserName(string username);
+        Registration GetUserByID(int UserID);
     }
 }

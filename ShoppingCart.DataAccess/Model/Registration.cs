@@ -15,6 +15,8 @@ namespace ShoppingCart.DataAccess.Model
         public string UserName { get; set; }
         [Required]
         public string Password { get; set; }
+        public string? Newpassword { get; set; }
+        public string? Confirmpassword { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string? Email { get; set; }

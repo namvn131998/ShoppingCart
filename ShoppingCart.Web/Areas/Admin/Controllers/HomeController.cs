@@ -94,5 +94,32 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
             }
             return Json(new {message="OK"});
         }
+        [HttpGet]
+        public IActionResult Profile(int UserID)
+        {
+            var model = _unitOfWork.RegistrationRepository.GetUserByID(UserID);
+            return View(model);
+        }
+        [HttpGet]
+        public IActionResult Changepassword(int UserID)
+        {
+            ViewBag.UserID = UserID;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Changepassword(int UserID = 0, string Password = "",string Newpassword = "", string Confirmpassword = "")
+        {
+            var user = _unitOfWork.RegistrationRepository.GetUserByID(UserID);
+            if (user.Password == Password)
+            {
+                user.Password = Newpassword;
+                _unitOfWork.Save();
+                return Json(new { result = "OK" });
+            }
+            else
+            {
+                return Json(new { result = "Fail" });
+            }
+        }
     }
 }

@@ -55,7 +55,11 @@ namespace ShoppingCart.DataAccess.Repositories
         }
         public Registration GetUserName(string username="")
         {
-            return _context.Registrations.FirstOrDefault(r => r.UserName == username);
+            return _context.Registrations.FirstOrDefault(r => r.UserName == username) ?? new Registration();
+        }
+        public Registration GetUserByID(int UserID)
+        {
+            return _context.Registrations.FirstOrDefault(r => r.UserID == UserID) ?? new Registration();
         }
     }
 }

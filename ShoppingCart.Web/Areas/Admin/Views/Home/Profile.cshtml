@@ -1,0 +1,52 @@
+﻿@using ShoppingCart.DataAccess.Model
+@model Registration
+@{
+
+}
+<div class="row">
+    <div class="col-sm-4">
+        <div class="avatar">
+            <img class="img-thumbnail" src="@Model.Photo"/>
+        </div>
+        <div class="mt-2">
+            <a class="btn btn-primary" href="@Url.Action("Changepassword","Home", new{UserID = Model.UserID})">Changepassword</a>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <form class="m-auto w-75"  asp-action="UpdateUser">
+            <div asp-validation-summary="ModelOnly"></div>
+              <!-- Username input -->
+              <div class="form-outline mb-4 ">
+                <label asp-for="UserName" class="form-label">UserName</label>
+                <input asp-for="UserName" class="form-control" type="text" placeholder = "Username" />
+                <span asp-validation-for="UserName"></span>
+              </div>
+              <!-- Email input -->
+              <div class="form-outline mb-4 ">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" type="email" placeholder = "Email"  />
+                <span asp-validation-for="Email"></span>
+              </div>
+                <!-- First Name input -->
+              <div class="form-outline mb-4 ">
+                <label asp-for="FirstName" class="form-label">FirstName</label>
+                <input asp-for="FirstName" class="form-control" type="text" placeholder = "FirstName"  />
+                <span asp-validation-for="FirstName"></span>
+              </div>
+                <!-- Last Name input -->
+              <div class="form-outline mb-4 ">
+                <label asp-for="LastName" class="form-label">LastName</label>
+                <input asp-for="LastName" class="form-control" type="text" placeholder = "LastName"  />
+                <span asp-validation-for="LastName"></span>
+              </div>
+                <!-- Phone input -->
+              <div class="form-outline mb-4 ">
+                <label asp-for="Phone" class="form-label">Phone</label>
+                <input asp-for="Phone" class="form-control" type="text" placeholder = "Phone"  />
+                <span asp-validation-for="Phone"></span>
+              </div>
+                <!-- Submit button -->
+              <button type="submit"  class="btn btn-primary btn-block mb-4">Save</button>
+        </form>
+    </div>
+</div>

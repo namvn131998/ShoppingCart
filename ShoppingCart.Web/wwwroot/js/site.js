@@ -15,3 +15,16 @@
         }
     })
 })
+function Changepassword() {
+    var url = $("#btn-changepassword").attr("data-ajax-url");
+    var data = $("#changepassword").serialize();
+    $.ajax({
+        url: url,
+        type: "POST",
+        data: data,
+        success: function (data) {
+            if (data.result == "OK")
+                alert("OK");
+        }
+    })
+}

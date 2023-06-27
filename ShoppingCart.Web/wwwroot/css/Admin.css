@@ -1,5 +1,4 @@
-﻿img
-.list-media-item{
+﻿.list-media-item{
     position: relative;
 }
 .list-media-item > img {
@@ -106,7 +105,7 @@
     .page-wrap .page-content {
         flex-grow: 1;
         padding: 10px;
-        margin: 0.5rem 0 0 21rem;
+        margin: 0.4rem 0 0 21rem;
         background: var(--bs-white);
         border-radius: 0.5rem;
         transition: all 0.3s ease;
@@ -124,4 +123,8 @@
     margin-left: 10rem !important;
 }
 /* --------------*/
+.avatar{
+    width:300px;
+    margin: auto;
+}
 
