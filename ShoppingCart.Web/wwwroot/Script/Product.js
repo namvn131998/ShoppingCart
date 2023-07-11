@@ -2,11 +2,11 @@
     urls: {
         Delete: SiteConfig.gSiteAdrs + "Admin/Product/Delete",
         List: SiteConfig.gSiteAdrs + "Admin/Product/_List",
-        ShowUploadFile: SiteConfig.gSiteAdrs + "Admin/Product/ShowUploadFile",
+        ShowUploadFile: SiteConfig.gSiteAdrs + "Admin/UploadFile/ShowUploadFile",
         CreateOrUpdate: SiteConfig.gSiteAdrs + "Admin/Product/CreateOrUpdate",
-        SubmitAddFileProduct: SiteConfig.gSiteAdrs + "Admin/Product/AddListThumbnail",
-        ShowListMedia: SiteConfig.gSiteAdrs + "Admin/Product/ShowListMedia",
-        DeleteMedia: SiteConfig.gSiteAdrs + "Admin/Product/DeleteMedia",
+        SubmitAddFileProduct: SiteConfig.gSiteAdrs + "Admin/UploadFile/AddListThumbnail",
+        ShowListMedia: SiteConfig.gSiteAdrs + "Admin/UploadFile/ShowListMedia",
+        DeleteMedia: SiteConfig.gSiteAdrs + "Admin/UploadFile/DeleteMedia",
     },
     Delete: function (id) {
         $.ajax({
@@ -68,11 +68,14 @@
         })
     },
     SubmitAddFileProduct: function () {
+        var data = new FormData($('#addMediaFileProduct')[0]);
+        var productID = $("#ProductID").val();
+        data.append("productID", productID);
         if ($("#addMediaFileProduct").valid()) {
             $.ajax({
                 url: ProductJS.urls.SubmitAddFileProduct,
                 type: 'POST',
-                data: new FormData($('#addMediaFileProduct')[0]),
+                data: data,
                 contentType: false,
                 processData: false,
                 success: function (data) {
@@ -98,12 +101,16 @@
             }
         })
     },
-    DeleteMedia: function (meidaid) {
+    DeleteMedia: function (meidaid, fileName, productID) {
+        var userID = $("#UserID").val();
         $.ajax({
             url: ProductJS.urls.DeleteMedia,
             type: "POST",
             data: {
-                mediaid : meidaid
+                mediaid: meidaid,
+                UserID: userID,
+                FileName: fileName,
+                productID: productID
             },
             success: function (data) {
                 alert(data.result);

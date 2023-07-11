@@ -10,11 +10,14 @@
         </div>
         <div class="mt-2">
             <a class="btn btn-primary" href="@Url.Action("Changepassword","Home", new{UserID = Model.UserID})">Changepassword</a>
+            <a class="btn btn-primary" id="btn-uploadAvatar" data-ajax-url="@Url.Action("ShowUploadFile","UploadFile")" onclick="PopupUploadFile()">Upload Avatar</a>
         </div>
     </div>
     <div class="col-sm-8">
         <form class="m-auto w-75"  asp-action="UpdateUser">
             <div asp-validation-summary="ModelOnly"></div>
+            @Html.Hidden("Photo",Model.Photo)
+            @Html.Hidden("UserID",Model.UserID)
               <!-- Username input -->
               <div class="form-outline mb-4 ">
                 <label asp-for="UserName" class="form-label">UserName</label>
@@ -49,4 +52,5 @@
               <button type="submit"  class="btn btn-primary btn-block mb-4">Save</button>
         </form>
     </div>
+    <div id="modalUploadFile" style="display:none;"></div>
 </div>

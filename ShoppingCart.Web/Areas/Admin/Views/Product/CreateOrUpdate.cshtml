@@ -23,6 +23,7 @@
 </style>
 <div id="modalUploadProductImage" title="Upload"></div>
 <form id="CreateOrUpdate">
+    @Html.Hidden("ProductID",Model.Id)
     <input id="MediaIDs" name="MediaIDs" type="hidden" />
     <input type="hidden" asp-for="Id"/>
     <div class="border p-3 mt-4">
@@ -66,9 +67,10 @@
                     foreach(var item in ListThumbnail)
                     {
                         item.Thumbnail = host + item.Thumbnail;
+                        @Html.Hidden("UserID", item.UserID)
                         <div class="list-media-item m-2">
                             <img src="@item.Thumbnail"/>
-                            <a onclick="ProductJS.DeleteMedia(@item.MediaID); return false;"><i class="fa-solid fa-xmark"></i></a>
+                            <a onclick="ProductJS.DeleteMedia(@item.MediaID, '@item.FileName', @item.ProductID); return false;"><i class="fa-solid fa-xmark"></i></a>
                         </div>
                     }
                 }

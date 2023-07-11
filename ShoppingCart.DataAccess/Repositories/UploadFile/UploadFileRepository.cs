@@ -16,7 +16,7 @@ namespace ShoppingCart.DataAccess.Repositories
         {
             _context = context;
         }
-        public void UpdateProduectID (int mediaID, int productID)
+        public void UpdateProductID (int mediaID, int productID)
         {
             var uploadfile = _context.UploadFiles.FirstOrDefault(u => u.MediaID == mediaID);
             if (uploadfile != null)

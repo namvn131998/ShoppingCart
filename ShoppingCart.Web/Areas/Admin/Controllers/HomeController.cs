@@ -121,5 +121,13 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
                 return Json(new { result = "Fail" });
             }
         }
+        [HttpPost]
+        public IActionResult UpdateUser(Registration reg)
+        {
+            _unitOfWork.RegistrationRepository.Update(reg);
+            _unitOfWork.Save();
+            var model = _unitOfWork.RegistrationRepository.GetUserByID(reg.UserID);
+            return RedirectToAction("Profile", model);
+        }
     }
 }

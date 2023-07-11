@@ -10,7 +10,7 @@ namespace ShoppingCart.DataAccess.Repositories
 {
     public interface IUploadFileRepository : IRepository<UploadFile>
     {
-        void UpdateProduectID(int mediaID, int productID);
+        void UpdateProductID(int mediaID, int productID);
         string GetThumbnailFromUploadFile(int productID,string host);
         List<UploadFile> GetThumbnailsFromUploadFile(int productID);
     }

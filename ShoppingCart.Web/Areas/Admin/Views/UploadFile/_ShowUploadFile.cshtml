@@ -8,7 +8,7 @@
       <input class="form-control" type="file" name="files" accept=".jpg,.png" id="formFile">
     </div>
     <div class="form-group mt-2">
-        <input type="button" onclick="ProductJS.SubmitAddFileProduct(); return false;" class="btn btn-primary btn-sm mt-2" value="Submit">
+        <input type="button" id="btn-submitFile" data-ajax-url="@Url.Action("AddListThumbnail","UploadFile")" onclick="ProductJS.SubmitAddFileProduct(); return false;" class="btn btn-primary btn-sm mt-2" value="Submit">
         <input type="button" class="btn btn-secondary btn-sm mt-2" value="Cancel">
     </div>
 </form>

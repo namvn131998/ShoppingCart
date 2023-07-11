@@ -22,7 +22,11 @@ namespace ShoppingCart.DataAccess.Repositories
             if (objReg != null)
             {
                 objReg.UserName = registration.UserName;
-                objReg.Password = registration.Password;
+                objReg.Email = registration.Email;
+                objReg.FirstName = registration.FirstName;
+                objReg.LastName = registration.LastName;
+                objReg.Phone = registration.Phone;
+                objReg.Photo = registration.Photo;
             }
         }
         public LoginStatus Login(string username, string password, out Registration registration)
