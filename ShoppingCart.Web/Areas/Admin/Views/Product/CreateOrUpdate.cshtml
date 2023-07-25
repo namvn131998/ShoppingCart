@@ -1,11 +1,14 @@
-﻿@using ShoppingCart.DataAccess.Repositories
+﻿@using ShoppingCart.DataAccess.Model;
+@using ShoppingCart.DataAccess.Repositories
 @model ShoppingCart.DataAccess.Model.Product
 @using ShoppingCart.Business.Utilities
 @inject IUnitOfWork _unitOfWork;
 @{
     var ListCategory = _unitOfWork.CategoryRepository.GetListCategory();
-    var ListThumbnail = _unitOfWork.UploadFileRepository.GetThumbnailsFromUploadFile(Model.Id);
     var userLogged = SessionUtilities.CurrentUser(ViewContext.HttpContext.Session);
+    List<UploadFile> ListThumbnail = new List<UploadFile>();
+    if (Model.Id > 0)
+        ListThumbnail = _unitOfWork.UploadFileRepository.GetThumbnailsFromUploadFile(Model.Id);
     var host = ViewBag.Host;
     List<SelectListItem> CategoryItems = new List<SelectListItem>();
     CategoryItems.AddRange(ListCategory.Select(x => new SelectListItem()
@@ -23,14 +26,13 @@
 </style>
 <div id="modalUploadProductImage" title="Upload"></div>
 <form id="CreateOrUpdate">
-    @Html.Hidden("ProductID",Model.Id)
     <input id="MediaIDs" name="MediaIDs" type="hidden" />
     <input type="hidden" asp-for="Id"/>
     <div class="border p-3 mt-4">
             <div class="form-group">
                 <h2 class="text-primary">@((Model.Id == 0) ? "Create" : "Edit")</h2>
             </div>
-        <div asp-validation-summary="All"></div>
+        @*<div asp-validation-summary="All"></div>*@
             <div class="form-group">
                 <label asp-for="Name" class="col-form-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -59,9 +61,8 @@
                     })
                 @Html.ValidationMessageFor(model => model.CategoryId)
             </div>
-            <a onclick="ProductJS.ShowUploadFile(); return false;" class="btn btn-primary btn-sm mt-2">Upload Image</a>
-            <div id="dvListMedia" class="form-group">
-                @if(Model.Id != 0)
+            <div class="form-group">
+                @if(Model.Id > 0)
                 {
                     
                     foreach(var item in ListThumbnail)
@@ -70,9 +71,9 @@
                         @Html.Hidden("UserID", item.UserID)
                         <div class="list-media-item m-2">
                             <img src="@item.Thumbnail"/>
-                            <a onclick="ProductJS.DeleteMedia(@item.MediaID, '@item.FileName', @item.ProductID); return false;"><i class="fa-solid fa-xmark"></i></a>
                         </div>
                     }
+                <a onclick="ProductJS.ShowUploadFile(@Model.Id); return false;" class="btn btn-primary btn-sm mt-2">Upload Image</a>
                 }
             </div>
             <div class="pt-2">

@@ -26,7 +26,7 @@
             <td>@item.DisplayOrder</td>
             <td>
                 <a asp-area="Admin" asp-controller="Category" asp-action="CreateOrUpdate" asp-route-id="@item.Id">Edit</a>
-                <a onclick = "SiteJS.Delete(@item.Id)">Delete</a>
+                <a onclick = "CateJS.Delete(@item.Id)">Delete</a>
                 
             </td>
         </tr>

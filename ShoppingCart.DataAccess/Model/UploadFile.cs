@@ -19,5 +19,6 @@ namespace ShoppingCart.DataAccess.Model
         public int UserID { get; set; }
         public DateTime UploadDate { get; set; }
         public int MediaTypeID { get; set; }
+        public int UploadTypeID { get; set; }
     }
 }

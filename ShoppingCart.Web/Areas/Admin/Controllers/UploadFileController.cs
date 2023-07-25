@@ -8,6 +8,7 @@ using ShoppingCart.Business.Utilities;
 using ShoppingCart.DataAccess.Helper;
 using X.PagedList;
 using System.IO;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ShoppingCart.Web.Areas.Admin.Controllers
 {
@@ -21,9 +22,18 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
         {
             _unitOfWork = unitOfWork;
         }
-        [HttpGet]
-        public IActionResult ShowUploadFile()
+        public string GetHostName()
         {
+            var host = HttpContext.Request.Host.ToString();
+            host = Commons.GetPathImage(host);
+            return host;
+        }
+        [HttpGet]
+        public IActionResult ShowUploadFile(string isProduct, int productID)
+        {
+            ViewBag.Host = GetHostName();
+            ViewBag.isProduct = isProduct;
+            ViewBag.productID = productID;
             return PartialView("_ShowUploadFile");
         }
         [HttpGet]
@@ -67,11 +77,21 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
             return Json(new { result = "OK" });
         }
         [HttpPost]
-        public async Task<IActionResult> AddListThumbnail(List<IFormFile> files, int userID, int productID)
+        public async Task<IActionResult> AddListThumbnail(List<IFormFile> files, int userID, int productID, int MediaTypeID , int UploadTypeID)
         {
             long mediaID = 0;
+            string userFolder = "";
             var folderHost = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-            string userFolder = $"UserID-{userID}/ProductID-{productID}";
+            switch (UploadTypeID)
+            {
+                case (int)UploadType.User:
+                    userFolder = $"UserID-{userID}/Avatar";
+                    
+                    break;
+                case (int)UploadType.Product:
+                    userFolder = $"UserID-{userID}/ProductID-{productID}";
+                    break;
+            }
             foreach (IFormFile file in files)
             {
                 if (file.Length > 0)
@@ -79,15 +99,15 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
                     var extensionFile = Path.GetExtension(file.FileName);
                     if (extensionFile == ".jpg" || extensionFile == ".png")
                     {
-                        mediaID = await SaveThumbnail(file, folderHost, userID, userFolder);
+                        mediaID = await SaveThumbnail(file, folderHost, userID, userFolder, MediaTypeID, UploadTypeID,productID);
                     }
                 }
             }
             return Ok(mediaID);
         }
-        private async Task<long> SaveThumbnail(IFormFile file, string folderHost, int userID, string userFolder)
+        private async Task<long> SaveThumbnail(IFormFile file, string folderHost, int userID, string userFolder, int MediaTypeID, int UploadTypeID, int productID)
         {
-            var folderMedia = (MediaType)1;
+            var folderMedia = (MediaType)MediaTypeID;
             var pathFolderMedia = Path.Combine("Upload", userFolder, folderMedia.ToString());
             var fullpathFolderMedia = Path.Combine(folderHost, pathFolderMedia);
             if (!Directory.Exists(fullpathFolderMedia))
@@ -105,8 +125,10 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
                 FileName = file.FileName,
                 Thumbnail = pathFile,
                 UploadDate = DateTime.Now,
-                MediaTypeID = 1,
-                UserID = userID
+                MediaTypeID = MediaTypeID,
+                UploadTypeID = UploadTypeID,
+                UserID = userID,
+                ProductID = productID
             };
             _unitOfWork.UploadFileRepository.Add(uploadfile);
             _unitOfWork.Save();

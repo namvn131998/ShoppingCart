@@ -1,14 +1,47 @@
 ﻿@using ShoppingCart.Business.Utilities
+@using ShoppingCart.DataAccess.Constants.Enums
+@using ShoppingCart.DataAccess.Model;
+@using ShoppingCart.DataAccess.Repositories
+@inject IUnitOfWork _unitOfWork;
 @{
+    int productID = ViewBag.productID;
     var userLogged = SessionUtilities.CurrentUser(ViewContext.HttpContext.Session);
+    bool isProduct = ViewBag.isProduct == "True" ? true : false;
+    List<UploadFile> ListThumbnail = new List<UploadFile>();
+    ListThumbnail = _unitOfWork.UploadFileRepository.GetThumbnailsFromUploadFile(productID);
+    var host = ViewBag.Host;
+    
 }
 <form id="addMediaFileProduct" enctype="multipart/form-data" asp-controller="Product" asp-action="AddListThumbnail">
     @Html.Hidden("UserID", userLogged.UserId)
+    @Html.Hidden("productID",productID)
     <div class="form-group mt-2">
       <input class="form-control" type="file" name="files" accept=".jpg,.png" id="formFile">
     </div>
+    <div id="dvListMedia" class="form-group">
+        @if (productID > 0)
+    {
+                    
+        foreach(var item in ListThumbnail)
+        {
+            item.Thumbnail = host + item.Thumbnail;
+            @Html.Hidden("UserID", item.UserID)
+            <div class="list-media-item m-2" data-mediaID = "@item.MediaID">
+                <img src="@item.Thumbnail"/>
+                    <a onclick="ProductJS.DeleteMedia(this,@item.MediaID, '@item.FileName', @item.ProductID); return false;"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+        }
+    }
+</div>
     <div class="form-group mt-2">
-        <input type="button" id="btn-submitFile" data-ajax-url="@Url.Action("AddListThumbnail","UploadFile")" onclick="ProductJS.SubmitAddFileProduct(); return false;" class="btn btn-primary btn-sm mt-2" value="Submit">
-        <input type="button" class="btn btn-secondary btn-sm mt-2" value="Cancel">
+        @if (!isProduct)
+        {
+            <input type="button" id="btn-submitFile" data-ajax-url="@Url.Action("AddListThumbnail","UploadFile")" onclick="SubmitAddFile(@((int)(MediaType)1),@((int)(UploadType)1)); return false;" class="btn btn-primary btn-sm mt-2" value="Submit">
+        }
+        else
+        {
+            <input type="button" id="btn-submitFile" data-ajax-url="@Url.Action("AddListThumbnail","UploadFile")" onclick="ProductJS.SubmitProduct(); return false;" class="btn btn-primary btn-sm mt-2" value="Submit">
+        }
+        <input type="button" id="btn-Cancel" class="btn btn-secondary btn-sm mt-2" value="Cancel">
     </div>
 </form>

@@ -28,3 +28,40 @@ function Changepassword() {
         }
     })
 }
+function PopupUploadFile() {
+    var url = $("#btn-uploadAvatar").attr("data-ajax-url");
+    $.ajax({
+        url: url,
+        type: "GET",
+        data: {
+
+        },
+        success: function (data) {
+            $("#modalUploadFile").html(data);
+            $("#modalUploadFile").dialog({
+                modal: true,
+                width: 500,
+                lgClass: true
+            });
+            $("#modalUploadFile").dialog("open");
+        }
+    })
+}
+function SubmitAddFile() {
+    var data = new FormData($('#addMediaFileProduct')[0]);
+    data.append("MediaTypeID", 1);
+    data.append("UploadTypeID", 1);
+    var url = $("#btn-submitFile").attr("data-ajax-url");
+    if ($("#addMediaFileProduct").valid()) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                $("#modalUploadFile").dialog("close");
+            }
+        });
+    }
+}

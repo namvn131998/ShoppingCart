@@ -48,14 +48,8 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
             }
         }
         [HttpPost]
-        public IActionResult CreateOrUpdate(Product product, string MediaIDs = "")
+        public IActionResult CreateOrUpdate(Product product)
         {
-            List<string> ids = new List<string>();
-            if (!string.IsNullOrEmpty(MediaIDs))
-            {
-                MediaIDs = MediaIDs.Trim(',');
-                ids = MediaIDs.Split(',').ToList();
-            }
             if (ModelState.IsValid)
             {
                 if (product.Id == 0)
@@ -68,11 +62,9 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
                 }
                 _unitOfWork.Save();
                 int productID = product.Id;
-                foreach (var item in ids)
-                    _unitOfWork.UploadFileRepository.UpdateProductID(Convert.ToInt32(item), productID);
-                return RedirectToAction("Index");
+                return Json(new { result = "OK",productID = productID });
             }
-            return RedirectToAction("Index");
+            return Json(new { result = "Fail" });
         }
         [HttpPost]
         public IActionResult Delete(int? id)
