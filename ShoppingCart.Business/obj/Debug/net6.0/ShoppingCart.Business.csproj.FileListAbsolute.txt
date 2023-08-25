@@ -10,3 +10,20 @@ D:\DotNet Core\ShoppingCart.Web\ShoppingCart.Business\obj\Debug\net6.0\ShoppingC
 D:\DotNet Core\ShoppingCart.Web\ShoppingCart.Business\obj\Debug\net6.0\refint\ShoppingCart.Business.dll
 D:\DotNet Core\ShoppingCart.Web\ShoppingCart.Business\obj\Debug\net6.0\ShoppingCart.Business.pdb
 D:\DotNet Core\ShoppingCart.Web\ShoppingCart.Business\obj\Debug\net6.0\ref\ShoppingCart.Business.dll
+C:\.NET\ShoppingCart\ShoppingCart.Business\bin\Debug\net6.0\ShoppingCart.Business.deps.json
+C:\.NET\ShoppingCart\ShoppingCart.Business\bin\Debug\net6.0\ShoppingCart.Business.dll
+C:\.NET\ShoppingCart\ShoppingCart.Business\bin\Debug\net6.0\ShoppingCart.Business.pdb
+C:\.NET\ShoppingCart\ShoppingCart.Business\bin\Debug\net6.0\ShoppingCart.DataAccess.dll
+C:\.NET\ShoppingCart\ShoppingCart.Business\bin\Debug\net6.0\ShoppingCart.Models.dll
+C:\.NET\ShoppingCart\ShoppingCart.Business\bin\Debug\net6.0\ShoppingCart.DataAccess.pdb
+C:\.NET\ShoppingCart\ShoppingCart.Business\bin\Debug\net6.0\ShoppingCart.Models.pdb
+C:\.NET\ShoppingCart\ShoppingCart.Business\obj\Debug\net6.0\ShoppingCart.Business.csproj.AssemblyReference.cache
+C:\.NET\ShoppingCart\ShoppingCart.Business\obj\Debug\net6.0\ShoppingCart.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\.NET\ShoppingCart\ShoppingCart.Business\obj\Debug\net6.0\ShoppingCart.Business.AssemblyInfoInputs.cache
+C:\.NET\ShoppingCart\ShoppingCart.Business\obj\Debug\net6.0\ShoppingCart.Business.AssemblyInfo.cs
+C:\.NET\ShoppingCart\ShoppingCart.Business\obj\Debug\net6.0\ShoppingCart.Business.csproj.CoreCompileInputs.cache
+C:\.NET\ShoppingCart\ShoppingCart.Business\obj\Debug\net6.0\ShoppingCart.Business.csproj.CopyComplete
+C:\.NET\ShoppingCart\ShoppingCart.Business\obj\Debug\net6.0\ShoppingCart.Business.dll
+C:\.NET\ShoppingCart\ShoppingCart.Business\obj\Debug\net6.0\refint\ShoppingCart.Business.dll
+C:\.NET\ShoppingCart\ShoppingCart.Business\obj\Debug\net6.0\ShoppingCart.Business.pdb
+C:\.NET\ShoppingCart\ShoppingCart.Business\obj\Debug\net6.0\ref\ShoppingCart.Business.dll

@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Web\\ShoppingCart.Web.csproj": {}
+    "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\ShoppingCart.Web.csproj": {}
   },
   "projects": {
-    "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Business\\ShoppingCart.Business.csproj": {
+    "C:\\.NET\\ShoppingCart\\ShoppingCart.Business\\ShoppingCart.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Business\\ShoppingCart.Business.csproj",
+        "projectUniqueName": "C:\\.NET\\ShoppingCart\\ShoppingCart.Business\\ShoppingCart.Business.csproj",
         "projectName": "ShoppingCart.Business",
-        "projectPath": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Business\\ShoppingCart.Business.csproj",
-        "packagesPath": "C:\\Users\\Nam\\.nuget\\packages\\",
-        "outputPath": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Business\\obj\\",
+        "projectPath": "C:\\.NET\\ShoppingCart\\ShoppingCart.Business\\ShoppingCart.Business.csproj",
+        "packagesPath": "C:\\Users\\NamVN\\.nuget\\packages\\",
+        "outputPath": "C:\\.NET\\ShoppingCart\\ShoppingCart.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nam\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\NamVN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -31,7 +30,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\.NET\\ShoppingCart\\ShoppingCart.DataAccess\\ShoppingCart.DataAccess.csproj": {
+                "projectPath": "C:\\.NET\\ShoppingCart\\ShoppingCart.DataAccess\\ShoppingCart.DataAccess.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -59,7 +62,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -68,26 +72,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.DataAccess\\ShoppingCart.DataAccess.csproj": {
+    "C:\\.NET\\ShoppingCart\\ShoppingCart.DataAccess\\ShoppingCart.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.DataAccess\\ShoppingCart.DataAccess.csproj",
+        "projectUniqueName": "C:\\.NET\\ShoppingCart\\ShoppingCart.DataAccess\\ShoppingCart.DataAccess.csproj",
         "projectName": "ShoppingCart.DataAccess",
-        "projectPath": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.DataAccess\\ShoppingCart.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Nam\\.nuget\\packages\\",
-        "outputPath": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.DataAccess\\obj\\",
+        "projectPath": "C:\\.NET\\ShoppingCart\\ShoppingCart.DataAccess\\ShoppingCart.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\NamVN\\.nuget\\packages\\",
+        "outputPath": "C:\\.NET\\ShoppingCart\\ShoppingCart.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nam\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\NamVN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -100,8 +103,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Models\\ShoppingCart.Models.csproj": {
-                "projectPath": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Models\\ShoppingCart.Models.csproj"
+              "C:\\.NET\\ShoppingCart\\ShoppingCart.Models\\ShoppingCart.Models.csproj": {
+                "projectPath": "C:\\.NET\\ShoppingCart\\ShoppingCart.Models\\ShoppingCart.Models.csproj"
               }
             }
           }
@@ -141,7 +144,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -150,26 +154,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Models\\ShoppingCart.Models.csproj": {
+    "C:\\.NET\\ShoppingCart\\ShoppingCart.Models\\ShoppingCart.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Models\\ShoppingCart.Models.csproj",
+        "projectUniqueName": "C:\\.NET\\ShoppingCart\\ShoppingCart.Models\\ShoppingCart.Models.csproj",
         "projectName": "ShoppingCart.Models",
-        "projectPath": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Models\\ShoppingCart.Models.csproj",
-        "packagesPath": "C:\\Users\\Nam\\.nuget\\packages\\",
-        "outputPath": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Models\\obj\\",
+        "projectPath": "C:\\.NET\\ShoppingCart\\ShoppingCart.Models\\ShoppingCart.Models.csproj",
+        "packagesPath": "C:\\Users\\NamVN\\.nuget\\packages\\",
+        "outputPath": "C:\\.NET\\ShoppingCart\\ShoppingCart.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nam\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\NamVN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -209,7 +212,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -218,43 +222,43 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Web\\ShoppingCart.Web.csproj": {
+    "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\ShoppingCart.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Web\\ShoppingCart.Web.csproj",
+        "projectUniqueName": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\ShoppingCart.Web.csproj",
         "projectName": "ShoppingCart.Web",
-        "projectPath": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Web\\ShoppingCart.Web.csproj",
-        "packagesPath": "C:\\Users\\Nam\\.nuget\\packages\\",
-        "outputPath": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Web\\obj\\",
+        "projectPath": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\ShoppingCart.Web.csproj",
+        "packagesPath": "C:\\Users\\NamVN\\.nuget\\packages\\",
+        "outputPath": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nam\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\NamVN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Business\\ShoppingCart.Business.csproj": {
-                "projectPath": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.Business\\ShoppingCart.Business.csproj"
+              "C:\\.NET\\ShoppingCart\\ShoppingCart.Business\\ShoppingCart.Business.csproj": {
+                "projectPath": "C:\\.NET\\ShoppingCart\\ShoppingCart.Business\\ShoppingCart.Business.csproj"
               },
-              "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.DataAccess\\ShoppingCart.DataAccess.csproj": {
-                "projectPath": "D:\\DotNet Core\\ShoppingCart.Web\\ShoppingCart.DataAccess\\ShoppingCart.DataAccess.csproj"
+              "C:\\.NET\\ShoppingCart\\ShoppingCart.DataAccess\\ShoppingCart.DataAccess.csproj": {
+                "projectPath": "C:\\.NET\\ShoppingCart\\ShoppingCart.DataAccess\\ShoppingCart.DataAccess.csproj"
               }
             }
           }
@@ -298,7 +302,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -310,7 +315,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

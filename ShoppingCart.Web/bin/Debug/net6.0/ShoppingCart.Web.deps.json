@@ -2566,6 +2566,7 @@
       "ShoppingCart.Business/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
+          "ShoppingCart.DataAccess": "1.0.0",
           "X.PagedList.Mvc.Core": "8.4.5"
         },
         "runtime": {

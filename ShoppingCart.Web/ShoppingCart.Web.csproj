@@ -29,4 +29,8 @@
     <ProjectReference Include="..\ShoppingCart.DataAccess\ShoppingCart.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\upload\UserID-1\Avatar\Photo\" />
+  </ItemGroup>
+
 </Project>

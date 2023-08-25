@@ -16,10 +16,10 @@
     @Html.Hidden("UserID", userLogged.UserId)
     @Html.Hidden("productID",productID)
     <div class="form-group mt-2">
-      <input class="form-control" type="file" name="files" accept=".jpg,.png" id="formFile">
+        <input class="form-control" type="file" name="files" accept=".jpg,.png" id="formFile" multiple>
     </div>
     <div id="dvListMedia" class="form-group">
-        @if (productID > 0)
+    @if (productID > 0)
     {
                     
         foreach(var item in ListThumbnail)
@@ -28,11 +28,11 @@
             @Html.Hidden("UserID", item.UserID)
             <div class="list-media-item m-2" data-mediaID = "@item.MediaID">
                 <img src="@item.Thumbnail"/>
-                    <a onclick="ProductJS.DeleteMedia(this,@item.MediaID, '@item.FileName', @item.ProductID); return false;"><i class="fa-solid fa-xmark"></i></a>
+                    <a onclick="ProductJS.DeleteMedia(@item.MediaID, '@item.FileName', @item.ProductID); return false;"><i class="fa-solid fa-xmark"></i></a>
             </div>
         }
     }
-</div>
+    </div>
     <div class="form-group mt-2">
         @if (!isProduct)
         {
@@ -40,8 +40,21 @@
         }
         else
         {
-            <input type="button" id="btn-submitFile" data-ajax-url="@Url.Action("AddListThumbnail","UploadFile")" onclick="ProductJS.SubmitProduct(); return false;" class="btn btn-primary btn-sm mt-2" value="Submit">
+            <input type="button" id="btn-submitFile" data-ajax-url="@Url.Action("AddListThumbnail","UploadFile")" onclick="ProductJS.SubmitAddFileProduct(@((int)(MediaType)1),@((int)(UploadType)2)); return false;" class="btn btn-primary btn-sm mt-2" value="Submit">
         }
         <input type="button" id="btn-Cancel" class="btn btn-secondary btn-sm mt-2" value="Cancel">
     </div>
 </form>
+<script type="text/javascript">
+    $("#formFile").on("change", function (event) {
+        for (var i = 0; i < event.target.files.length; i++) {
+            var x = URL.createObjectURL(event.target.files[i]);
+            $("#dvListMedia").append("<div id=''><img></div>");
+            
+            $("#dvListMedia div").last().attr("id", "media-" + i);
+            
+            $("#media-" + i).find("img").attr("src", x);
+        }
+
+    })
+</script>

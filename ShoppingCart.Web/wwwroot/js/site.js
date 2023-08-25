@@ -14,6 +14,7 @@
             $(".page-content").removeClass("mgl-10");
         }
     })
+
 })
 function Changepassword() {
     var url = $("#btn-changepassword").attr("data-ajax-url");

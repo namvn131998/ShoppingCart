@@ -98,6 +98,12 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
         public IActionResult Profile(int UserID)
         {
             var model = _unitOfWork.RegistrationRepository.GetUserByID(UserID);
+            if (model != null)
+            {
+                var uploadFile = _unitOfWork.UploadFileRepository.GetT(u => u.UserID == UserID && u.UploadTypeID == (int)UploadType.User);
+                if (uploadFile != null)
+                    model.Photo = GetHostName() + uploadFile.Thumbnail;
+            }
             return View(model);
         }
         [HttpGet]
@@ -128,6 +134,12 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
             _unitOfWork.Save();
             var model = _unitOfWork.RegistrationRepository.GetUserByID(reg.UserID);
             return RedirectToAction("Profile", model);
+        }
+        public string GetHostName()
+        {
+            var host = HttpContext.Request.Host.ToString();
+            host = Commons.GetPathImage(host);
+            return host;
         }
     }
 }

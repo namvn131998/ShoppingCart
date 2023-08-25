@@ -110,6 +110,7 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
             var folderMedia = (MediaType)MediaTypeID;
             var pathFolderMedia = Path.Combine("Upload", userFolder, folderMedia.ToString());
             var fullpathFolderMedia = Path.Combine(folderHost, pathFolderMedia);
+            int id = 0;
             if (!Directory.Exists(fullpathFolderMedia))
             {
                 Directory.CreateDirectory(fullpathFolderMedia);
@@ -119,21 +120,35 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
             {
                 await file.CopyToAsync(stream);
             }
-            var pathFile = Path.Combine(pathFolderMedia, file.FileName).Replace(@"\", "/");
-            var uploadfile = new UploadFile
+            var isExist = CheckExistMedia(file.FileName, productID);
+            if (!isExist)
             {
-                FileName = file.FileName,
-                Thumbnail = pathFile,
-                UploadDate = DateTime.Now,
-                MediaTypeID = MediaTypeID,
-                UploadTypeID = UploadTypeID,
-                UserID = userID,
-                ProductID = productID
-            };
-            _unitOfWork.UploadFileRepository.Add(uploadfile);
-            _unitOfWork.Save();
-            int id = uploadfile.MediaID;
+                var pathFile = Path.Combine(pathFolderMedia, file.FileName).Replace(@"\", "/");
+                var uploadfile = new UploadFile
+                {
+                    FileName = file.FileName,
+                    Thumbnail = pathFile,
+                    UploadDate = DateTime.Now,
+                    MediaTypeID = MediaTypeID,
+                    UploadTypeID = UploadTypeID,
+                    UserID = userID,
+                    ProductID = productID
+                };
+                _unitOfWork.UploadFileRepository.Add(uploadfile);
+                _unitOfWork.Save();
+                id = uploadfile.MediaID;
+            }
             return id;
+        }
+        public bool CheckExistMedia(string FileName, int ProductID)
+        {
+            var isExist = true;
+            var uploadFile = _unitOfWork.UploadFileRepository.GetT(x => x.FileName == FileName && x.ProductID == ProductID);
+            if (uploadFile == null) 
+            {
+                isExist = false;
+            }
+            return isExist;
         }
     }
 }

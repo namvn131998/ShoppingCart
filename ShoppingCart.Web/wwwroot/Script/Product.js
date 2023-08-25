@@ -34,14 +34,14 @@
             }
         })
     },
-    ShowUploadFile: function () {
+    ShowUploadFile: function (isProduct, productID) {
         $.ajax({
             type: "GET",
             url: ProductJS.urls.ShowUploadFile,
             data: {
-                
+                isProduct: "True",
+                productID: productID
             },
-            processData: false,
             success: function (data) {
                 $("#modalUploadProductImage").html(data);
                 $("#modalUploadProductImage").dialog({
@@ -62,15 +62,18 @@
             data: data,
             contentType: false,
             processData: false,
-            success: function () {
-                alert(1);
+            success: function (data) {
+                if (data.result == "OK")
+                    ProductJS.ShowUploadFile("True", parseInt(data.productID));
             }
         })
     },
-    SubmitAddFileProduct: function () {
+    SubmitAddFileProduct: function (MediaTypeID, UploadTypeID) {
         var data = new FormData($('#addMediaFileProduct')[0]);
-        var productID = $("#ProductID").val();
+        var productID = $("#productID").val();
         data.append("productID", productID);
+        data.append("MediaTypeID", MediaTypeID);
+        data.append("UploadTypeID", UploadTypeID);
         if ($("#addMediaFileProduct").valid()) {
             $.ajax({
                 url: ProductJS.urls.SubmitAddFileProduct,
@@ -80,10 +83,7 @@
                 processData: false,
                 success: function (data) {
                     $("#modalUploadProductImage").dialog("close");
-                    ProductJS.ShowListMedia(data);
-                    var listMeida = $('#MediaIDs').val().split();
-                    listMeida.push(data);                  
-                    $('#MediaIDs').val(listMeida.toString());
+                    
                 }
             });
         }
