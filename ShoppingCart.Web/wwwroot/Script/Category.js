@@ -1,7 +1,7 @@
 ﻿var CateJS = {
     urls: {
-        Delete: SiteConfig.gSiteAdrs + "Admin/Category/Delete",
-        List: SiteConfig.gSiteAdrs + "Admin/Category/_List",
+        Delete: SiteConfig.gSiteAdrs + "/Category/Delete",
+        List: SiteConfig.gSiteAdrs + "/Category/_List",
     },
     Delete: function (id) {
         $.ajax({
