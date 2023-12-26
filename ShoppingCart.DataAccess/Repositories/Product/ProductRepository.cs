@@ -18,12 +18,20 @@ namespace ShoppingCart.DataAccess.Repositories
         }
         public void Update(Product product)
         {
-            var objPro = _context.Products.FirstOrDefault(c => c.Id == product.Id);
-            if (objPro == null)
+            var objPro = _context.Products.FirstOrDefault(p => p.Id == product.Id);
+            if (objPro != null)
             {
                 objPro.Name = product.Name;
                 objPro.Description = product.Description;
                 objPro.Price = product.Price;
+            }
+        }
+        public void UpdateMediaID(int productID, int mediaID)
+        {
+            var objPro = _context.Products.FirstOrDefault(p => p.Id == productID);
+            if (objPro != null)
+            {
+                objPro.MediaId = mediaID;
             }
         }
     }

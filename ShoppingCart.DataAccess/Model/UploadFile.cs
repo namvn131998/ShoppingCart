@@ -15,7 +15,6 @@ namespace ShoppingCart.DataAccess.Model
         public string FileName { get; set; }
         [Required]
         public string Thumbnail { get; set; }
-        public int ProductID { get; set; }
         public int UserID { get; set; }
         public DateTime UploadDate { get; set; }
         public int MediaTypeID { get; set; }

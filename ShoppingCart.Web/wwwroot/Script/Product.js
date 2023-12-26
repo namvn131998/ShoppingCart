@@ -1,12 +1,12 @@
 ﻿var ProductJS = {
     urls: {
-        Delete: SiteConfig.gSiteAdrs + "Admin/Product/Delete",
-        List: SiteConfig.gSiteAdrs + "Admin/Product/_List",
-        ShowUploadFile: SiteConfig.gSiteAdrs + "Admin/UploadFile/ShowUploadFile",
-        CreateOrUpdate: SiteConfig.gSiteAdrs + "Admin/Product/CreateOrUpdate",
-        SubmitAddFileProduct: SiteConfig.gSiteAdrs + "Admin/UploadFile/AddListThumbnail",
-        ShowListMedia: SiteConfig.gSiteAdrs + "Admin/UploadFile/ShowListMedia",
-        DeleteMedia: SiteConfig.gSiteAdrs + "Admin/UploadFile/DeleteMedia",
+        Delete: SiteConfig.gSiteAdrs + "/Product/Delete",
+        List: SiteConfig.gSiteAdrs + "/Product/_List",
+        ShowUploadFile: SiteConfig.gSiteAdrs + "/UploadFile/ShowUploadFile",
+        CreateOrUpdate: SiteConfig.gSiteAdrs + "/Product/CreateOrUpdate",
+        SubmitAddFileProduct: SiteConfig.gSiteAdrs + "/UploadFile/AddListThumbnail",
+        ShowListMedia: SiteConfig.gSiteAdrs + "/UploadFile/ShowListMedia",
+        DeleteMedia: SiteConfig.gSiteAdrs + "/UploadFile/DeleteMedia",
     },
     Delete: function (id) {
         $.ajax({

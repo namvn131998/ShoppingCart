@@ -8,7 +8,7 @@
     var userLogged = SessionUtilities.CurrentUser(ViewContext.HttpContext.Session);
     List<UploadFile> ListThumbnail = new List<UploadFile>();
     if (Model.Id > 0)
-        ListThumbnail = _unitOfWork.UploadFileRepository.GetThumbnailsFromUploadFile(Model.Id);
+        ListThumbnail = _unitOfWork.UploadFileRepository.GetThumbnailsFromUploadFile(Model.MediaId);
     var host = ViewBag.Host;
     List<SelectListItem> CategoryItems = new List<SelectListItem>();
     CategoryItems.AddRange(ListCategory.Select(x => new SelectListItem()

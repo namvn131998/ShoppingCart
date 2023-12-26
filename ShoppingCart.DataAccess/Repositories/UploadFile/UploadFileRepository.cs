@@ -16,23 +16,14 @@ namespace ShoppingCart.DataAccess.Repositories
         {
             _context = context;
         }
-        public void UpdateProductID (int mediaID, int productID)
+        public string GetThumbnailFromUploadFile(int mediaID, string host)
         {
-            var uploadfile = _context.UploadFiles.FirstOrDefault(u => u.MediaID == mediaID);
-            if (uploadfile != null)
-            {
-                uploadfile.ProductID = productID;
-            }
-            _context.SaveChanges();
-        }
-        public string GetThumbnailFromUploadFile(int productID, string host)
-        {
-            var uploadfile = _context.UploadFiles.FirstOrDefault(u => u.ProductID == productID) ?? new UploadFile();
+            var uploadfile = _context.UploadFiles.FirstOrDefault(u => u.MediaID == mediaID) ?? new UploadFile();
             return host + uploadfile.Thumbnail;
         }
-        public List<UploadFile> GetThumbnailsFromUploadFile(int productID)
+        public List<UploadFile> GetThumbnailsFromUploadFile(int mediaID)
         {
-            var uploadfile = _context.UploadFiles.Where(u => u.ProductID == productID).ToList();
+            var uploadfile = _context.UploadFiles.Where(u => u.MediaID == mediaID).ToList();
             
             return uploadfile;
         }
