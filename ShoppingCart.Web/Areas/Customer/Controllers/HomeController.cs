@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ShoppingCart.DataAccess.Model;
+using ShoppingCart.DataAccess.Repositories;
 using ShoppingCart.Models;
 using System.Diagnostics;
 
@@ -7,16 +9,21 @@ namespace ShoppingCart.Web.Controllers
     [Area("Customer")]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private IUnitOfWork _unitOfWork;
+        public HomeController(IUnitOfWork unitOfWork)
         {
-            _logger = logger;
+            _unitOfWork = unitOfWork;
         }
-
         public IActionResult Index()
         {
             return View();
+        }
+        [HttpGet]
+        public IActionResult _QuickView(int productID)
+        {
+            Product model = new Product();
+            model = _unitOfWork.ProductRepository.GetT(p => p.Id == productID);
+            return PartialView(model);
         }
 
         public IActionResult Privacy()

@@ -10,6 +10,8 @@
     productVM.Products = _unitOfWork.ProductRepository.GetAll();
     categoryVM.categories = _unitOfWork.CategoryRepository.GetAll();
 }
+<div id="product-QuickView">
+</div>
 <section class="mt-8">
     <div class="container">
         <div class="banner-slider">
@@ -80,6 +82,11 @@
                                     <a href="#">
                                         <img src="@thumbnail" class="mb-3 img-fluid">
                                     </a>
+                                    <div class="card-product-action">
+                                        <a class="btn-action" onclick="openQuickViewModal(@item.Id);">
+                                            <i class="bi bi-eye" data-toggle="tooltip" data-placement="top" title="Quick View"></i>
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="text-center mb-1">
                                     <a href="#" class="text-decoration-none text-muted">
@@ -111,5 +118,49 @@
         </div>
     </div>
 </section>
-
+<section class="my-lg-14 my-8">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="mb-8 mb-xl-0">
+                    <div class="mb-6">
+                        <i class="fas fa-clock fa-2x"></i>
+                        <h3 class="h5 mb-3">10 minute grocery now</h3>
+                        <p>Get your order delivered to your doorstep at the earliest from FreshCart pickup stores near you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="mb-8 mb-xl-0">
+                    <div class="mb-6">
+                        <i class="fa-solid fa-gift fa-2x"></i>
+                        <h3 class="h5 mb-3">Best Prices & Offers</h3>
+                        <p>Cheaper prices than your local supermarket, great cashback offers to top it off. Get best pricess & offers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="mb-8 mb-xl-0">
+                    <div class="mb-6">
+                        <i class="fa-solid fa-truck-fast fa-2x"></i>
+                        <h3 class="h5 mb-3">Wide Assortment</h3>
+                        <p>Choose from 5000+ products across food, personal care, household, bakery, veg and non-veg & other categories.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="mb-8 mb-xl-0">
+                    <div class="mb-6">
+                        <i class="fa-solid fa-arrows-rotate fa-2x"></i>
+                        <h3 class="h5 mb-3">Easy Returns</h3>
+                        <p>Not satisfied with a product? Return it at the doorstep & get a refund within hours. No questions asked policy .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ @section Scripts{
+    <script src="~/Script/FE/Shared.js"></script>
+ }
 

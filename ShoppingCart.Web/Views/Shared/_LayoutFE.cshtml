@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="~/ShoppingCart.Web.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <div>
@@ -21,15 +22,10 @@
                 <div class="page-content">
                     @RenderBody()    
                 </div>
+                @await Html.PartialAsync("Navigation/Footer/_FooterFE.cshtml")
             </div>
         </main>
     </div>
-
-@*    <footer class="border-top footer text-muted">
-        <div class="container">
-
-        </div>
-    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
@@ -38,7 +34,8 @@
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Script/jquery-ui.min.js"></script>
     <script type="text/javascript" src="~/Script/slick.js"></script>
-    <script src="~/Script/FE/Shared.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <script type="text/javascript">
         var SiteConfig = {
             gSiteAdrs: "@(Url.Action("", "", null,  "https"))"
@@ -48,6 +45,11 @@
             Create: "Create Successfully!",
             Update: "Update Successfully!"
     };
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

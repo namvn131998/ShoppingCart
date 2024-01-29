@@ -1,0 +1,73 @@
+﻿@using ShoppingCart.DataAccess.Model
+@using ShoppingCart.DataAccess.ViewModels
+@using ShoppingCart.DataAccess.Repositories
+@inject IUnitOfWork _unitOfWork;
+@{
+    ViewData["Title"] = "Home Page";
+    CategoryVM categoryVM = new CategoryVM();
+    ProductVM productVM = new ProductVM();
+    productVM.Products = _unitOfWork.ProductRepository.GetAll();
+    categoryVM.categories = _unitOfWork.CategoryRepository.GetAll();
+}
+<div class="row">
+    <div class="col-lg-6">
+        <div class="tns-outer" id="productModal-ow">
+            <div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span class="current">1</span>  of 4</div><div id="productModal-mw" class="tns-ovh">
+                <div class="tns-inner" id="productModal-iw">
+                    <div class="product productModal  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal" id="productModal" style="transform: translate3d(0%, 0px, 0px);">
+                        <div class="zoom tns-item tns-slide-active" onmousemove="zoom(event)" style="background-image: url(&quot;~/img/category-atta-rice-dal.jpg&quot;); background-position: 22.7273% 99.2424%;" id="productModal-item0">
+                            <!-- img -->
+                            <img src="~/img/category-atta-rice-dal.jpg" alt="">
+                        </div>
+                        <div class="tns-item" id="productModal-item1" aria-hidden="true" tabindex="-1">
+                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(&quot;~/img/category-atta-rice-dal.jpg&quot;); background-position: 31.8182% 67.4242%;">
+                                <!-- img -->
+                                <img src="~/img/category-atta-rice-dal.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="tns-item" id="productModal-item2" aria-hidden="true" tabindex="-1">
+                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(&quot;~/img/category-atta-rice-dal.jpg&quot;); background-position: 69.0341% 44.3182%;">
+                                <!-- img -->
+                                <img src="~/img/category-atta-rice-dal.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="tns-item" id="productModal-item3" aria-hidden="true" tabindex="-1">
+                            <div class="zoom" onmousemove="zoom(event)" style="background-image: url(&quot;~/img/category-atta-rice-dal.jpg&quot;); background-position: 61.9318% 99.6212%;">
+                                <!-- img -->
+                                <img src="~/img/category-atta-rice-dal.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-tools">
+            <div class="thumbnails row g-3" id="productModalThumbnails" aria-label="Carousel Pagination">
+                <div class="col-3 tns-nav-active" data-nav="0" aria-label="Carousel Page 1 (Current Slide)" aria-controls="productModal">
+                    <div class="thumbnails-img">
+                        <!-- img -->
+                        <img src="~/img/category-atta-rice-dal.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-3" data-nav="1" aria-label="Carousel Page 2" aria-controls="productModal" tabindex="-1">
+                    <div class="thumbnails-img">
+                        <!-- img -->
+                        <img src="~/img/category-atta-rice-dal.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-3" data-nav="2" aria-label="Carousel Page 3" aria-controls="productModal" tabindex="-1">
+                    <div class="thumbnails-img">
+                        <!-- img -->
+                        <img src="~/img/category-atta-rice-dal.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-3" data-nav="3" aria-label="Carousel Page 4" aria-controls="productModal" tabindex="-1">
+                    <div class="thumbnails-img">
+                        <!-- img -->
+                        <img src="~/img/category-atta-rice-dal.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

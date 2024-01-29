@@ -1,0 +1,74 @@
+﻿@using ShoppingCart.DataAccess.Model
+@using ShoppingCart.DataAccess.ViewModels
+@using ShoppingCart.DataAccess.Repositories
+@inject IUnitOfWork _unitOfWork;
+@{
+    CategoryVM categoryVM = new CategoryVM();
+    categoryVM.categories = _unitOfWork.CategoryRepository.GetAll();
+}
+<footer class="footer">
+        <div class="container">
+            <div class="col-12">
+                <div class="row g-4">
+                    <div class="col-3">
+                        <h6 class="mb-4">Về Chúng Tôi</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">
+                                Giới Thiệu Về Chúng Tôi
+                            </li>
+                            <li class="nav-item mb-2">
+                                Tuyển Dụng
+                            </li>
+                            <li class="nav-item mb-2">
+                                Chính Sách Bảo Mật
+                            </li>
+                            <li class="nav-item mb-2">
+                            Chính Hãng
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-3">
+                        <h6 class="mb-4"> CHĂM SÓC KHÁCH HÀNG</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">
+                                Trung Tâm Trợ Giúp
+                            </li>
+                            <li class="nav-item mb-2">
+                                Hướng Dẫn Mua Hàng
+                            </li>
+                            <li class="nav-item mb-2">
+                                Vận Chuyển
+                            </li>
+                            <li class="nav-item mb-2">
+                                Trả Hàng & Hoàn Tiền
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-3">
+                        <h6 class="mb-4"> THANH TOÁN</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">
+                                <img src="~/img/Visa.png"/>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <img src="~/img/Cod.png"/>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-3">
+                        <h6 class="mb-4">THEO DÕI CHÚNG TÔI TRÊN</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">
+                                <i class="fa-brands fa-facebook"></i>
+                                <a href="#"> Facebook</a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <i class="fa-brands fa-instagram"></i>
+                                <a href="#">Instagram</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+</footer>

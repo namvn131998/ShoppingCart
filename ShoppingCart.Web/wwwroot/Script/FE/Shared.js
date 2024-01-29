@@ -16,3 +16,26 @@ $(document).ready(function () {
         nextArrow: '<span class="slick-next slick-arrow" style=""><i class="fa-solid fa-chevron-right"></i></span>',
     })
 });
+var urls = {
+    urlQuickView: SiteConfig.gSiteAdrs + 'Customer/Home/_QuickView',
+}
+function openQuickViewModal(productID) {
+    $.ajax({
+        url: urls.urlQuickView,
+        type: 'GET',
+        data: {
+            productID: productID
+        },
+        success: function (data) {
+            $("#product-QuickView").html(data);
+            $("#product-QuickView").dialog({
+                width: 800,
+                height: 600,
+                modal: true,
+                lgClass: true
+            });
+            $("#product-QuickView").dialog();
+            $(".ui-dialog-titlebar").hide();
+        }
+    })
+}
