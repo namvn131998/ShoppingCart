@@ -35,7 +35,11 @@ function openQuickViewModal(productID) {
                 lgClass: true
             });
             $("#product-QuickView").dialog();
+            $('#productModal').slick({
+                infinite: true
+            });
             $(".ui-dialog-titlebar").hide();
         }
     })
 }
+

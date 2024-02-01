@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using ShoppingCart.DataAccess.Data;
 using ShoppingCart.Models;
 using ShoppingCart.DataAccess.Model;
+using ShoppingCart.Business.Repositories;
 
-namespace ShoppingCart.DataAccess.Repositories
+namespace ShoppingCart.Business.Repositories
 {
     public class ProductRepository : Repository<Product>, IProductRepository
     {
@@ -26,12 +27,12 @@ namespace ShoppingCart.DataAccess.Repositories
                 objPro.Price = product.Price;
             }
         }
-        public void UpdateMediaID(int productID, int mediaID)
+        public void UpdateMediaID(int productID, string mediaIDs)
         {
             var objPro = _context.Products.FirstOrDefault(p => p.Id == productID);
             if (objPro != null)
             {
-                objPro.MediaId = mediaID;
+                objPro.MediaIds = mediaIDs;
             }
         }
     }

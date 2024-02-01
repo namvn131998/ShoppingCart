@@ -83,7 +83,11 @@
                 processData: false,
                 success: function (data) {
                     $("#modalUploadProductImage").dialog("close");
-                    
+                    if (data.value == "OK") {
+                        alert("Upload image success!")
+                    } else {
+                        alert("Image has duplicate!")
+                    }
                 }
             });
         }

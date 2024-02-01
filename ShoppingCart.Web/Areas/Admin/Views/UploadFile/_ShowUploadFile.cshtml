@@ -1,14 +1,15 @@
 ﻿@using ShoppingCart.Business.Utilities
 @using ShoppingCart.DataAccess.Constants.Enums
 @using ShoppingCart.DataAccess.Model;
-@using ShoppingCart.DataAccess.Repositories
+@using ShoppingCart.Business.Repositories
 @inject IUnitOfWork _unitOfWork;
 @{
     int productID = ViewBag.productID;
     var userLogged = SessionUtilities.CurrentUser(ViewContext.HttpContext.Session);
     bool isProduct = ViewBag.isProduct == "True" ? true : false;
     List<UploadFile> ListThumbnail = new List<UploadFile>();
-    ListThumbnail = _unitOfWork.UploadFileRepository.GetThumbnailsFromUploadFile(productID);
+    string mediaids = _unitOfWork.ProductRepository.GetT(p => p.Id == productID).MediaIds;
+    ListThumbnail = _unitOfWork.UploadFileRepository.GetThumbnailsFromUploadFile(mediaids);
     var host = ViewBag.Host;
     
 }

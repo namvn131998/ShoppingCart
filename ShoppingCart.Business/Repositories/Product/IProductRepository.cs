@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ShoppingCart.DataAccess.Model;
+using ShoppingCart.Business.Repositories;
 
-namespace ShoppingCart.DataAccess.Repositories
+namespace ShoppingCart.Business.Repositories
 {
     public interface IProductRepository : IRepository<Product>
     {
         void Update(Product product);
-        void UpdateMediaID(int productID, int mediaID);
+        void UpdateMediaID(int productID, string mediaID);
     }
 }

@@ -21,6 +21,6 @@ namespace ShoppingCart.DataAccess.Model
         public int  CategoryId { get; set; }
         [ValidateNever]
         public Category Category { get; set; }
-        public int MediaId { get; set; }
+        public string MediaIds { get; set; }
     }
 }

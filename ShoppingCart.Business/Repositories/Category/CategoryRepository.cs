@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using ShoppingCart.DataAccess.Data;
 using ShoppingCart.Models;
 using ShoppingCart.DataAccess.Model;
+using ShoppingCart.Business.Repositories;
 
-
-namespace ShoppingCart.DataAccess.Repositories
+namespace ShoppingCart.Business.Repositories
 {
     public class CategoryRepository :  Repository<Category>, ICategoryRepository
     {

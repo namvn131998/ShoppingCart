@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using ShoppingCart.DataAccess.Data;
 using ShoppingCart.DataAccess.Model;
 using ShoppingCart.DataAccess.Constants.Enums;
+using ShoppingCart.Business.Repositories;
 
-namespace ShoppingCart.DataAccess.Repositories
+namespace ShoppingCart.Business.Repositories
 {
     public class RegistrationRepository : Repository<Registration>, IRegistrationRepository
     {

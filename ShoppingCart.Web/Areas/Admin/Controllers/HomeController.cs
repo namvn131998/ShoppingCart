@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShoppingCart.DataAccess.ViewModels;
-using ShoppingCart.DataAccess.Repositories;
 using ShoppingCart.DataAccess.Model;
 using ShoppingCart.DataAccess.Constants.Enums;
 using ShoppingCart.Business.Utilities;
 using ShoppingCart.DataAccess.Helper;
+using ShoppingCart.Business.Repositories;
 
 namespace ShoppingCart.Web.Areas.Admin.Controllers
 {

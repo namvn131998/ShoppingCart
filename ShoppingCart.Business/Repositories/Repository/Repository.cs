@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ShoppingCart.DataAccess.Data;
 
-namespace ShoppingCart.DataAccess.Repositories
+namespace ShoppingCart.Business.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {

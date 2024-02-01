@@ -4,7 +4,7 @@
 @using X.PagedList;
 @using X.PagedList.Mvc.Core;
 @using X.PagedList.Web.Common;
-@using ShoppingCart.DataAccess.Repositories
+@using ShoppingCart.Business.Repositories
 @inject IUnitOfWork _unitOfWork;
 @{
     CategoryVM categoryVM = new CategoryVM();
@@ -36,7 +36,7 @@
             <td>@item.Name</td>
             <td>
                 
-                <img src="@_unitOfWork.UploadFileRepository.GetThumbnailFromUploadFile(item.MediaId,host)">
+                <img src="@_unitOfWork.UploadFileRepository.GetThumbnailFromUploadFile(item.MediaIds,host)">
             </td>
             <td>@item.Description</td>
             <td>@item.Price</td>

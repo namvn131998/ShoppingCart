@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ShoppingCart.DataAccess.Repositories;
+using ShoppingCart.Business.Repositories;
 using ShoppingCart.DataAccess.ViewModels;
 using ShoppingCart.DataAccess.Model;
 using ShoppingCart.Models.Category;
@@ -9,6 +9,9 @@ using ShoppingCart.DataAccess.Helper;
 using X.PagedList;
 using System.IO;
 using Microsoft.EntityFrameworkCore.Metadata;
+using System;
+using System.Text.Json;
+using Microsoft.CodeAnalysis;
 
 namespace ShoppingCart.Web.Areas.Admin.Controllers
 {
@@ -80,6 +83,7 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
         public async Task<IActionResult> AddListThumbnail(List<IFormFile> files, int userID, int productID, int MediaTypeID , int UploadTypeID)
         {
             int mediaID = 0;
+            var mediaids = _unitOfWork.ProductRepository.GetT(p => p.Id == productID).MediaIds; 
             string userFolder = "";
             var folderHost = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
             switch (UploadTypeID)
@@ -99,20 +103,30 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
                     var extensionFile = Path.GetExtension(file.FileName);
                     if (extensionFile == ".jpg" || extensionFile == ".png")
                     {
-                        mediaID = await SaveThumbnail(file, folderHost, userID, userFolder, MediaTypeID, UploadTypeID,productID);
-                        _unitOfWork.ProductRepository.UpdateMediaID(productID, mediaID);
-                        _unitOfWork.Save();
+                        var result = await SaveThumbnail(file, folderHost, userID, userFolder, MediaTypeID, UploadTypeID,productID);
+                        mediaID = result.id;
+                        if(result.value == "OK")
+                        {
+                            mediaids = mediaids + "," + mediaID;
+                        }
+                        else
+                        {
+                            return Json(result);
+                        }
                     }
                 }
             }
-            return Ok(mediaID);
+            mediaids = mediaids.Trim(',');
+            _unitOfWork.ProductRepository.UpdateMediaID(productID, mediaids);
+            _unitOfWork.Save();
+            return Json(new Result() {value = "OK"});
         }
-        private async Task<int> SaveThumbnail(IFormFile file, string folderHost, int userID, string userFolder, int MediaTypeID, int UploadTypeID, int productID)
+        private async Task<Result> SaveThumbnail(IFormFile file, string folderHost, int userID, string userFolder, int MediaTypeID, int UploadTypeID, int productID)
         {
+            var result = new Result();
             var folderMedia = (MediaType)MediaTypeID;
             var pathFolderMedia = Path.Combine("Upload", userFolder, folderMedia.ToString());
             var fullpathFolderMedia = Path.Combine(folderHost, pathFolderMedia);
-            int id = 0;
             if (!Directory.Exists(fullpathFolderMedia))
             {
                 Directory.CreateDirectory(fullpathFolderMedia);
@@ -122,7 +136,7 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
             {
                 await file.CopyToAsync(stream);
             }
-            var isExist = CheckExistMedia(file.FileName);
+            var isExist = CheckExistMedia(file.FileName, productID);
             if (!isExist)
             {
                 var pathFile = Path.Combine(pathFolderMedia, file.FileName).Replace(@"\", "/");
@@ -137,15 +151,26 @@ namespace ShoppingCart.Web.Areas.Admin.Controllers
                 };
                 _unitOfWork.UploadFileRepository.Add(uploadfile);
                 _unitOfWork.Save();
-                id = uploadfile.MediaID;
+                result.id = uploadfile.MediaID;
+                result.value = "OK";
+                result.fileName = file.FileName;
+                return result;
             }
-            return id;
+            else
+            {
+                result.fileName = file.FileName;
+                result.value = "Fail";
+                return result;
+            }
         }
-        public bool CheckExistMedia(string FileName)
+        public bool CheckExistMedia(string FileName, int productID)
         {
             var isExist = true;
-            var uploadFile = _unitOfWork.UploadFileRepository.GetT(x => x.FileName == FileName && x.UploadTypeID == (int)UploadType.Product);
-            if (uploadFile == null) 
+            var mediaids = _unitOfWork.ProductRepository.GetT(x => x.Id == productID).MediaIds;
+
+            var uploadFile = _unitOfWork.UploadFileRepository.GetListMediaByProductMediaIDs(mediaids, FileName);
+
+            if (uploadFile.Count == 0) 
             {
                 isExist = false;
             }

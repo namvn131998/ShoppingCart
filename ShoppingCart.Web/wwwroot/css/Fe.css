@@ -2,3 +2,76 @@
     width: 100%;
     object-fit: cover;
 }
+.p-slider {
+}
+.p-slider .p-slider-item {
+    width: calc(25%);
+    display: inline-block;
+}
+.p-slider .p-slider-item img{
+    width: 100%;
+}
+.slick-slide > A {
+    display: block;
+    position: relative;
+    height: 150px;
+    width: 100%;
+}
+
+    .slick-slide > A > IMG {
+        position: absolute;
+        width: 100%;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+.slick-dots {
+    bottom: -80px;
+}
+
+    .slick-dots LI {
+        width: 75px;
+        height: 75px;
+        opacity: .8;
+    }
+
+        .slick-dots LI.slick-active {
+            opacity: 1;
+        }
+
+            .slick-dots LI.slick-active BUTTON,
+            .slick-dots LI:hover BUTTON {
+                opacity: 1;
+                transform: scale(1,1);
+            }
+
+        .slick-dots LI BUTTON {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: auto;
+            padding: 0;
+            transition: all .5s ease;
+            transform: scale(.75,.75);
+        }
+
+            .slick-dots LI BUTTON IMG {
+                display: block;
+                height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+
+            .slick-dots LI BUTTON:before {
+                display: block;
+                position: relative;
+                content: '';
+                width: 100%;
+                padding-top: 100%;
+                height: auto;
+            }

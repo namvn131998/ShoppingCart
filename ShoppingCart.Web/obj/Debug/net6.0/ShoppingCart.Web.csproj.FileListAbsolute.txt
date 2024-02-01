@@ -575,3 +575,4 @@ C:\.NET\ShoppingCart\ShoppingCart.Web\obj\Debug\net6.0\refint\ShoppingCart.Web.d
 C:\.NET\ShoppingCart\ShoppingCart.Web\obj\Debug\net6.0\ShoppingCart.Web.pdb
 C:\.NET\ShoppingCart\ShoppingCart.Web\obj\Debug\net6.0\ShoppingCart.Web.genruntimeconfig.cache
 C:\.NET\ShoppingCart\ShoppingCart.Web\obj\Debug\net6.0\ref\ShoppingCart.Web.dll
+C:\.NET\ShoppingCart\ShoppingCart.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutFE.cshtml.rz.scp.css

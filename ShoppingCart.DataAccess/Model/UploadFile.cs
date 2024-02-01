@@ -20,4 +20,11 @@ namespace ShoppingCart.DataAccess.Model
         public int MediaTypeID { get; set; }
         public int UploadTypeID { get; set; }
     }
+    public class Result
+    {
+        public int id { get; set; }
+        public string value { get; set; }
+        public string fileName { get; set; }
+
+    }
 }

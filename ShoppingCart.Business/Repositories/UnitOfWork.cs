@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ShoppingCart.DataAccess.Data;
 
-namespace ShoppingCart.DataAccess.Repositories
+namespace ShoppingCart.Business.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {

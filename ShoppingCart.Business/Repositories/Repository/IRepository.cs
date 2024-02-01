@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using ShoppingCart.DataAccess.Model;
 
 
-namespace ShoppingCart.DataAccess.Repositories
+namespace ShoppingCart.Business.Repositories
 {
     public interface IRepository<T> where T : class
     {

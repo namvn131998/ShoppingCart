@@ -84,6 +84,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/.NET/ShoppingCart/ShoppingCart.Web/Areas/Customer/Views/Home/_QuickView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcSG9tZVxfUXVpY2tWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/.NET/ShoppingCart/ShoppingCart.Web/Areas/Customer/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -98,6 +102,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/.NET/ShoppingCart/ShoppingCart.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/.NET/ShoppingCart/ShoppingCart.Web/Views/Shared/Navigation/Footer/_FooterFE.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5hdmlnYXRpb25cRm9vdGVyXF9Gb290ZXJGRS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/.NET/ShoppingCart/ShoppingCart.Web/Views/Shared/Navigation/Header/_HeaderFE.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5hdmlnYXRpb25cSGVhZGVyXF9IZWFkZXJGRS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/.NET/ShoppingCart/ShoppingCart.Web/Views/Shared/_LoginLayout.cshtml]
@@ -119,3 +131,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/.NET/ShoppingCart/ShoppingCart.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-w02gr4tiet
+
+[C:/.NET/ShoppingCart/ShoppingCart.Web/Views/Shared/_LayoutFE.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGRS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-06zwhna4oi

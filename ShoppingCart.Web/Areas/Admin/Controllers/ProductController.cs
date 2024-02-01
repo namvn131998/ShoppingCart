@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ShoppingCart.DataAccess.Repositories;
+using ShoppingCart.Business.Repositories;
 using ShoppingCart.DataAccess.ViewModels;
 using ShoppingCart.DataAccess.Model;
 using ShoppingCart.Models.Category;

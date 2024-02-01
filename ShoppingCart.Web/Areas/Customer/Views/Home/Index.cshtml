@@ -1,6 +1,6 @@
 ﻿@using ShoppingCart.DataAccess.Model
 @using ShoppingCart.DataAccess.ViewModels
-@using ShoppingCart.DataAccess.Repositories
+@using ShoppingCart.Business.Repositories
 @inject IUnitOfWork _unitOfWork;
 @{
     ViewData["Title"] = "Home Page";
@@ -74,7 +74,7 @@
             <div class="row g-4 row-cols-lg-5 row-cols-2 row-cols-md-3">
                 @foreach(var item in productVM.Products){
                     var categoryName = _unitOfWork.CategoryRepository.GetT(x => x.Id == item.CategoryId).Name;
-                    var thumbnail = _unitOfWork.UploadFileRepository.GetThumbnailFromUploadFile(item.MediaId, ViewBag.Host);
+                    var thumbnail = _unitOfWork.UploadFileRepository.GetThumbnailFromUploadFile(item.MediaIds);
                     <div class="col">
                         <div class="card card-product">
                             <div class="card-body">

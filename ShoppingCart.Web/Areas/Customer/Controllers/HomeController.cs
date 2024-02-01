@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShoppingCart.DataAccess.Model;
-using ShoppingCart.DataAccess.Repositories;
+using ShoppingCart.Business.Repositories;
 using ShoppingCart.Models;
 using System.Diagnostics;
 

@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Script\\Category.js"
     },
     {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\Script\\FE\\Shared.js",
+      "PackagePath": "staticwebassets\\Script\\FE\\Shared.js"
+    },
+    {
       "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\Script\\Product.js",
       "PackagePath": "staticwebassets\\Script\\Product.js"
     },
@@ -25,8 +29,40 @@
       "PackagePath": "staticwebassets\\Script\\jquery-ui.min.js"
     },
     {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\Script\\slick.js",
+      "PackagePath": "staticwebassets\\Script\\slick.js"
+    },
+    {
       "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\css\\Admin.css",
       "PackagePath": "staticwebassets\\css\\Admin.css"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\css\\Fe.css",
+      "PackagePath": "staticwebassets\\css\\Fe.css"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\css\\Theme.css",
+      "PackagePath": "staticwebassets\\css\\Theme.css"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\css\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\css\\ajax-loader.gif"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\css\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\css\\fonts\\slick.eot"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\css\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\css\\fonts\\slick.svg"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\css\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\css\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\css\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\css\\fonts\\slick.woff"
     },
     {
       "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\css\\icon-close.png",
@@ -39,6 +75,14 @@
     {
       "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\css\\slick-theme.css",
+      "PackagePath": "staticwebassets\\css\\slick-theme.css"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\css\\slick.css",
+      "PackagePath": "staticwebassets\\css\\slick.css"
     },
     {
       "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\favicon.ico",
@@ -281,16 +325,48 @@
       "PackagePath": "staticwebassets\\upload\\UserID-1\\Avatar\\Photo\\download.png"
     },
     {
-      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-66\\Photo\\download.png",
-      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-66\\Photo\\download.png"
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-71\\Photo\\product-img-1.jpg",
+      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-71\\Photo\\product-img-1.jpg"
     },
     {
-      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-66\\Photo\\images.jpg",
-      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-66\\Photo\\images.jpg"
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-72\\Photo\\product-img-1.jpg",
+      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-72\\Photo\\product-img-1.jpg"
     },
     {
-      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-67\\Photo\\images.jpg",
-      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-67\\Photo\\images.jpg"
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-74\\Photo\\product-img-1.jpg",
+      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-74\\Photo\\product-img-1.jpg"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-75\\Photo\\product-img-2.jpg",
+      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-75\\Photo\\product-img-2.jpg"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-76\\Photo\\product-img-3.jpg",
+      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-76\\Photo\\product-img-3.jpg"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-77\\Photo\\product-img-4.jpg",
+      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-77\\Photo\\product-img-4.jpg"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-78\\Photo\\product-img-1.jpg",
+      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-78\\Photo\\product-img-1.jpg"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-78\\Photo\\product-img-2.jpg",
+      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-78\\Photo\\product-img-2.jpg"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-78\\Photo\\product-img-3.jpg",
+      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-78\\Photo\\product-img-3.jpg"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-78\\Photo\\product-img-4.jpg",
+      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-78\\Photo\\product-img-4.jpg"
+    },
+    {
+      "Id": "C:\\.NET\\ShoppingCart\\ShoppingCart.Web\\wwwroot\\upload\\UserID-1\\ProductID-78\\Photo\\product-img-5.jpg",
+      "PackagePath": "staticwebassets\\upload\\UserID-1\\ProductID-78\\Photo\\product-img-5.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ShoppingCart.Web.Microsoft.AspNetCore.StaticWebAssets.props",
